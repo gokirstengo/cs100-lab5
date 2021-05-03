@@ -6,6 +6,8 @@
 #include <vector>
 #include <iosfwd>
 
+using namespace std;
+
 class Select;
 
 class Spreadsheet
