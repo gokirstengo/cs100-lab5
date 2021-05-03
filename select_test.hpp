@@ -75,6 +75,14 @@ TEST(ContainTest, ContainsBlankTest) {
     EXPECT_EQ(c.select(&sheet, 3), true);
 }
 
+TEST(ContainTest, BlankInRowTest) {
+    Spreadsheet sheet;
+    sheet.set_column_names({"Name","Species","Age","Color"});
+    sheet.add_row({"Hershey","","7","Brown"});
+    Select_Contains c(&sheet, "Species", "Dog");
+
+    EXPECT_EQ(c.select(&sheet, 0), false);
+
+}
 
 #endif //__SELECT_TEST_HPP__
-
